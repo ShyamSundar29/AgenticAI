@@ -41,7 +41,7 @@ finance_agent = Agent(
 )
 
 # Creating a multi-agent system to leverage both web search and finance agents
-multi_ai_agent = Agent(model=Groq(id="llama3-groq-70b-8192-tool-use-preview")),
+multi_ai_agent = Agent(model=Groq(id="llama3-groq-70b-8192-tool-use-preview"),
     team=[web_search_agent, finance_agent],  # Team of agents working together
     instructions=["Always include sources", "Use table to display the data"],  # Shared instructions for the team
     show_tool_calls=True,  # Enable display of tool calls during execution
